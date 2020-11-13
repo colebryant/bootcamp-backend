@@ -1,0 +1,22 @@
+﻿@model Context.Models.Book
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<br />
+
+<h4>Delete  @Html.DisplayFor(model => model.Title) by @Html.DisplayFor(model => model.AuthorFirstName) @Html.DisplayFor(model => model.AuthorLastName)?</h4>
+<div class="center-align">
+  
+    <hr />
+    <br />
+ 
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="BookId" />
+        <input type="submit" value="Delete" class="btn deep-purple accent-2" />
+        <button asp-action="Index" class="btn pink accent-4">Cancel</button>
+    </form>
+</div>
+<br />

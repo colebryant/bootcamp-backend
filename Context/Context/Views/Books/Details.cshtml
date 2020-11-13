@@ -1,0 +1,63 @@
+﻿@model Context.Models.Book
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>
+    @Html.DisplayFor(model => model.Title)
+</h2>
+<h4>
+    @Html.DisplayFor(model => model.AuthorFirstName) @Html.DisplayFor(model => model.AuthorLastName) | @Html.DisplayFor(model => model.Country)
+
+
+</h4>
+
+<hr />
+<br />
+<div>
+    <ul class="collection">
+        <li class="collection-item">   
+            <h5>
+            @Html.DisplayNameFor(model => model.AuthorInfo)  
+            </h5>
+            <p class="truncate">
+                @Html.DisplayFor(model => model.AuthorInfo)
+
+            </p>
+        </li>
+        <li class="collection-item">
+            <h5>
+                @Html.DisplayNameFor(model => model.BookInfo)
+            </h5>
+            <p class="truncate">
+                @Html.DisplayFor(model => model.BookInfo)
+
+            </p>
+        </li>
+        <li class="collection-item">
+            <h5>
+                @Html.DisplayNameFor(model => model.HistoricalInfo)
+            </h5>
+            <p class="truncate">
+                @Html.DisplayFor(model => model.HistoricalInfo)
+
+            </p>
+        </li>
+        <li class="collection-item">
+            <h5>
+                @Html.DisplayNameFor(model => model.CountryInfo)
+            </h5>
+            <p class="truncate">
+                @Html.DisplayFor(model => model.CountryInfo)
+
+            </p>
+        </li>
+    </ul>
+   
+</div>
+<div>
+    <a asp-action="Index" class="teal-text text-accent-3">
+        <i class="small material-icons">reply_all</i>
+    </a>
+</div>

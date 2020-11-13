@@ -1,0 +1,28 @@
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @*<form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Book", "Home", new { area = "" })" method="post" id="logoutForm" class="">
+        <ul id="nav-mobile" class="">*@
+            <li>
+                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserAsync(User).Result.FirstName!</a>
+            </li>
+            <li>
+               <a asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" id="logoutForm" class="">Logout</a>
+            </li>
+        @*</ul>
+    </form>*@
+}
+else
+{
+    //<ul id="nav-mobile" class="right hide-on-med-and-down">
+        //<div>
+
+        <li><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+        <li><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+       // </div>
+    //</ul>
+}
